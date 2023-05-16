@@ -1,0 +1,287 @@
+    .container {
+        display: grid;
+        grid: "header header header header" "nav nav nav nav" "text1 text1 figure1 figure1"450px "figure2 figure2 text2 text2 "450px "text-figure1 text-figure1 text-figure2 text-figure2" "image1 image2 image3 image4" "footer footer footer footer"/ 25% 25% 25% 25%;
+    }
+    /* MOBILE */
+    
+    .header .menu {
+        display: none;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .header .mobile {
+        background-color: #000;
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 2px;
+        top: 29px;
+        pointer-events: pointer;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .header .mobile:before,
+    .header .mobile:after {
+        background-color: #000;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition:all 0.2s ease-in-out;
+    }
+    /* DROPDOWN */
+    
+    .header .mobile:before {
+        bottom: -10px;
+    }
+    
+    .header .mobile:after {
+        top: -10px;
+    }
+    
+    .header input {
+        display: none;
+    }
+    
+    .header nav input:checked~label .mobile {
+        transform: rotate(45deg);
+    }
+    
+    .header nav input:checked~label .mobile:before {
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+    
+    .header nav input:checked~label .mobile:after {
+        transform: rotate(90deg);
+        top: 0;
+    }
+    /* DROPDOWN */
+    /* MOBILE */
+    /* HEADER */
+    
+    .header {
+        grid-area: header;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+    
+    .header .title {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    .header a:hover {
+        color: #c27e50;
+        transition:all 0.2s ease-in-out;
+    }
+    
+    .header .navigation {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .header .navigation a {
+        padding: 10px 20px;
+        transition:all 0.2s ease-in-out;
+    }
+    
+    .header .navigation a:hover {
+        color: #f8f8f8;
+        background-color: #c27e50;
+        border-radius: 15px;
+    }
+    /* NAV */
+    
+    .nav {
+        grid-area: nav;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        background: url('./img/lemons.jpg') center no-repeat;
+        background-size: 100%;
+    }
+    
+    .nav p {
+        font-weight: 600;
+        margin-right: 20px;
+    }
+    /*  DOWN ARROW */
+    
+    .nav::after {
+        content: url('img/seta_preta.png');
+        position: absolute;
+        bottom: 10px;
+        animation: downarrow 0.6s infinite alternate ease-in-out;
+    }
+    
+    @-webkit-keyframes downarrow {
+        0% {
+            -webkit-transform: translateY(0);
+            opacity: 0.4;
+        }
+        100% {
+            -webkit-transform: translateY(0.4em);
+            opacity: 0.9;
+        }
+    }
+    /*  DOWN ARROW */
+    /* SECTIONS */
+    
+    .text-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px;
+    }
+    
+    .text-center p {
+        margin-top: 20px;
+    }
+    
+    .text-center .info {
+        font-size: 15px;
+    }
+    
+    .text1 {
+        grid-area: text1;
+    }
+    
+    .figure1 {
+        grid-area: figure1;
+        background: url("img/bridge.jpg")no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .text2 {
+        grid-area: text2;
+    }
+    
+    .figure2 {
+        grid-area: figure2;
+        background: url("img/sky.jpg")no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .text-figure-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+    }
+    
+    .text-figure1 {
+        grid-area: text-figure1;
+        background-color: #6ca3c6;
+    }
+    
+    .text-figure2 {
+        grid-area: text-figure2;
+        background-color: #c78d97;
+    }
+    
+    .images {
+        height: 400px;
+    }
+    
+    .image1 {
+        grid-area: image1;
+    }
+    
+    .image2 {
+        grid-area: image2;
+    }
+    
+    .image3 {
+        grid-area: image3;
+    }
+    
+    .image4 {
+        grid-area: image4;
+    }
+    /* FOOTER */
+    
+    .footer {
+        grid-area: footer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0px;
+        background-color: #8fed90;
+    }
+    
+    .footer-navigation {
+        margin: 20px;
+    }
+    
+    .footer-navigation a {
+        padding: 20px;
+    }
+    
+    .social-media img {
+        height: 30px;
+        padding: 10px;
+    }
+    /* RESPONSIVE */
+    
+    @media (max-width: 768px) {
+        .container {
+            display: grid;
+            grid: "header header" "nav nav" "text1 text1" "figure1 figure1" 400px"text2 text2" "figure2 figure2 "400px "text-figure1 text-figure1 " "text-figure2 text-figure2" "image1 image2 " "image3 image4" "footer footer";
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .header .title {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .header .menu {
+            display: block;
+        }
+        /* DROPDOWN */
+        .header nav {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .header nav .navigation a {
+            padding: 10px 30px;
+        }
+        .header nav input:not(:checked)~.navigation {
+            display: block;
+            position: absolute;
+            left: 100%;
+        }
+        .header nav input:checked~.navigation {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+            top: 80px;
+            left: 30%;
+            width: 200px;
+            height: 220px;
+
+            background-color: rgba(0, 0,0,0.2);
+            border-radius: 20px;
+            transition: all .3s ease-in-out;
+        }
+        
+    }
